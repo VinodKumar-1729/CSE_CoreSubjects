@@ -132,3 +132,5 @@ Choosing the right SDLC model depends on several factors:
 ### Conclusion
 The Software Development Life Cycle (SDLC) is a critical framework for structured and optimized software development. In a rapidly evolving technological landscape, SDLC phases provide innovative and efficient solutions for users and organizations. Adapting SDLC principles ensures effective achievement of software development goals.
 
+
+**GFG Link :** https://www.geeksforgeeks.org/software-development-life-cycle-sdlc/?ref=lbp
