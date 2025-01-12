@@ -1,3 +1,112 @@
+### **Web Fundamentals**
+
+---
+
+### **1. HTTP/HTTPS**
+HTTP (HyperText Transfer Protocol) and HTTPS (HTTP Secure) are foundational protocols for web communication. Here are the details:
+
+#### **Request-Response Model**
+- **Overview**: The client (browser or application) sends an HTTP request to a server, which processes the request and sends back an HTTP response.
+- **Structure of an HTTP Request**:
+  1. **Request Line**: Contains the method (GET, POST, PUT, etc.), URL, and HTTP version.
+  2. **Headers**: Provide metadata like content type, user-agent, and authentication details.
+  3. **Body** (Optional): Contains data, usually for POST/PUT requests.
+- **Structure of an HTTP Response**:
+  1. **Status Line**: Contains the HTTP version, status code, and reason phrase.
+  2. **Headers**: Similar to request headers, providing metadata for the response.
+  3. **Body**: Contains the requested resource (e.g., HTML, JSON) or error details.
+
+#### **Status Codes**
+- **1xx Informational**: Request received, continuing process.
+  - **100 Continue**: Initial part of the request has been received.
+- **2xx Success**: Request successfully processed.
+  - **200 OK**: Standard success response.
+  - **201 Created**: Resource successfully created.
+- **3xx Redirection**: Further action needed to complete the request.
+  - **301 Moved Permanently**: Resource permanently moved to a new URL.
+  - **302 Found**: Temporary redirection.
+- **4xx Client Errors**: Issues with the request.
+  - **400 Bad Request**: Invalid request syntax or parameters.
+  - **401 Unauthorized**: Authentication required.
+  - **403 Forbidden**: Server refuses to authorize.
+  - **404 Not Found**: Resource not found.
+- **5xx Server Errors**: Issues on the server side.
+  - **500 Internal Server Error**: Generic server error.
+  - **503 Service Unavailable**: Server temporarily unable to handle the request.
+
+#### **CORS (Cross-Origin Resource Sharing)**
+- **Purpose**: Allows a server to specify who can access its resources from another origin.
+- **Same-Origin Policy**: Browsers restrict requests to the same origin unless explicitly allowed.
+- **Key Headers**:
+  - `Access-Control-Allow-Origin`: Specifies allowed origins.
+  - `Access-Control-Allow-Methods`: Lists HTTP methods allowed (e.g., GET, POST).
+  - `Access-Control-Allow-Headers`: Lists custom headers allowed in requests.
+- **Preflight Requests**: Automatically sent by browsers using the OPTIONS method to check permissions.
+
+---
+
+### **2. APIs**
+APIs (Application Programming Interfaces) allow communication between software applications.
+
+#### **RESTful Principles**
+REST (Representational State Transfer) is an architectural style for building APIs, emphasizing stateless communication and resource management.
+
+1. **Statelessness**:
+   - Each request from a client contains all information needed to process it.
+   - The server does not store client state between requests.
+2. **Client-Server Architecture**:
+   - The client handles user interface and user experience.
+   - The server manages data and logic.
+3. **Uniform Interface**:
+   - Use consistent endpoints and methods (e.g., `/users` for user data).
+   - Follow standard conventions for HTTP methods:
+     - **GET**: Retrieve resources.
+     - **POST**: Create new resources.
+     - **PUT/PATCH**: Update existing resources.
+     - **DELETE**: Remove resources.
+4. **Resource Identification**:
+   - Resources are identified by URIs (e.g., `/api/v1/products/123`).
+5. **Representation**:
+   - Resources can be represented in formats like JSON or XML.
+6. **Stateless Cacheability**:
+   - Responses indicate whether they can be cached.
+
+#### **Creating APIs**
+1. **Define Endpoints**:
+   - List all resources and their CRUD operations.
+   - Example:
+     - GET `/users`: Get a list of users.
+     - POST `/users`: Create a new user.
+2. **Use Proper HTTP Methods**:
+   - Follow REST conventions for operations.
+3. **Handle Errors Gracefully**:
+   - Use appropriate status codes and descriptive error messages.
+4. **Secure the API**:
+   - Use HTTPS to encrypt data in transit.
+   - Implement authentication (e.g., JWT, OAuth).
+5. **Documentation**:
+   - Provide clear API documentation (e.g., Swagger, Postman).
+
+#### **Consuming APIs**
+1. **HTTP Clients**:
+   - Use libraries like `fetch` (JavaScript), `axios`, or tools like Postman.
+2. **Steps to Consume**:
+   - **Send Request**: Use the correct method, URL, headers, and body.
+   - **Parse Response**: Handle the response format (JSON, XML).
+   - **Handle Errors**: Manage client-side and server-side errors.
+3. **Authentication**:
+   - Include tokens or API keys in headers.
+   - Example:
+     ```javascript
+     fetch('https://api.example.com/data', {
+       method: 'GET',
+       headers: {
+         'Authorization': 'Bearer your-token-here'
+       }
+     });
+     ```
+
+---
 
 ---
 
