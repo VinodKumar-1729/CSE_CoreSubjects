@@ -1,499 +1,752 @@
+# **Object-Oriented Programming (OOPs)**
 
-
-**Basic OOPS questions:**
-
----
-
-### **1. What is OOPS?**
-Object-Oriented Programming System (OOPS) is a programming paradigm that organizes data and behavior into "objects." Objects are instances of classes and contain attributes (data) and methods (functions) that operate on the data. OOPS is designed to improve code modularity, reusability, and scalability.
-
----
-
-### **2. What are the main principles of OOPS? Explain each.**
-The four main principles of OOPS are:
-1. **Encapsulation**: Bundling data (attributes) and methods (functions) within a class and restricting direct access to some components.
-   - Example: Private variables in a class with getter and setter methods.
-   
-2. **Inheritance**: Enabling one class (child/subclass) to acquire properties and behaviors of another class (parent/superclass).
-   - Example: A `Car` class inheriting from a `Vehicle` class.
-
-3. **Polymorphism**: Allowing methods to have different behaviors based on their usage or input.
-   - Example: Method Overloading and Method Overriding.
-   
-4. **Abstraction**: Hiding implementation details and showing only the essential features.
-   - Example: An interface or abstract class in Java.
+## **What is OOPs?**  
+- OOPs stands for **Object-Oriented Programming**.  
+- It is a **programming paradigm** based on the concept of "objects."  
+- Objects are instances of **classes** that encapsulate data and behavior.  
+- The four **core principles** of OOPs:  
+  1. **Encapsulation**  
+  2. **Abstraction**  
+  3. **Polymorphism**  
+  4. **Inheritance**  
 
 ---
 
-### **3. Define the terms: Class and Object.**
-- **Class**: A blueprint or template for creating objects. It defines attributes (variables) and methods (functions) that the objects of the class will have.
-  - Example: A `Car` class defines properties like `color`, `model`, and methods like `start()` and `stop()`.
-- **Object**: An instance of a class that contains specific data and can perform actions defined by the class.
-  - Example: `myCar = new Car();`
+## **Why do we need OOPs?**  
+- Provides **modularity** and organizes code better.  
+- Ensures **data hiding** and security.  
+- **Code reusability** through inheritance.  
+- **Flexibility** using polymorphism.  
+- Makes complex programs **more manageable**.  
 
 ---
 
-### **4. What is the difference between a Class and an Object?**
-| **Aspect**       | **Class**                                       | **Object**                              |
-|-------------------|------------------------------------------------|-----------------------------------------|
-| **Definition**    | A blueprint or template for objects.           | An instance of a class.                 |
-| **Memory**        | Does not occupy memory until an object is created. | Occupies memory when instantiated.     |
-| **Usage**         | Defines attributes and methods.                | Uses the attributes and methods of its class. |
+## **Major Object-Oriented Programming Languages**  
+- Java  
+- C++  
+- C#  
+- Python  
+- Ruby  
+- Swift  
+- Kotlin  
 
 ---
 
-### **5. What are the key features of OOPS?**
-1. **Encapsulation**: Bundling data and methods together.
-2. **Inheritance**: Reusing code through hierarchy.
-3. **Polymorphism**: Implementing one interface in multiple forms.
-4. **Abstraction**: Hiding complexities from users.
-5. **Modularity**: Dividing the program into manageable units.
-6. **Reusability**: Reusing existing code in new programs.
+## **Key Features of OOPs**  
 
----
+### **1. Encapsulation**  
+- **Definition**: Bundling of data and methods that operate on that data into a **single unit** (class).  
+- **Purpose**: To **restrict** direct access to some details of an object.  
+- **Example**: Using **private** variables in a class and accessing them via **getter and setter** methods.  
 
-### **6. What is Encapsulation? Why is it important?**
-Encapsulation is the process of wrapping data and methods into a single unit, typically a class, while restricting direct access to the data using access modifiers (e.g., `private`, `protected`). 
-- **Importance**:
-  1. **Data Security**: Prevents unauthorized access to data.
-  2. **Code Maintainability**: Makes code easier to manage and update.
-  3. **Abstraction**: Hides implementation details from the user.
-
----
-
-### **7. What is Inheritance? Give examples.**
-Inheritance is the mechanism by which a class (child/subclass) inherits properties and methods from another class (parent/superclass).
-- **Example**:
-  ```java
-  class Animal {
-      void eat() {
-          System.out.println("This animal eats food.");
-      }
-  }
-  class Dog extends Animal {
-      void bark() {
-          System.out.println("The dog barks.");
-      }
-  }
-  Dog dog = new Dog();
-  dog.eat(); // Output: This animal eats food.
-  dog.bark(); // Output: The dog barks.
-  ```
-
----
-
-### **8. What is Polymorphism? Explain with examples.**
-Polymorphism allows methods or functions to behave differently based on input or context.
-1. **Compile-Time Polymorphism (Method Overloading)**:
-   ```java
-   class Math {
-       int add(int a, int b) { return a + b; }
-       double add(double a, double b) { return a + b; }
-   }
-   ```
-2. **Run-Time Polymorphism (Method Overriding)**:
-   ```java
-   class Animal {
-       void sound() { System.out.println("Animal makes a sound"); }
-   }
-   class Dog extends Animal {
-       void sound() { System.out.println("Dog barks"); }
-   }
-   Animal animal = new Dog();
-   animal.sound(); // Output: Dog barks
-   ```
-
----
-
-### **9. What is Abstraction? How is it implemented in OOPS?**
-Abstraction is the process of hiding implementation details and showing only the necessary functionality.
-- **Implementation**:
-  - Using **Abstract Classes**:
-    ```java
-    abstract class Shape {
-        abstract void draw();
-    }
-    class Circle extends Shape {
-        void draw() { System.out.println("Drawing Circle"); }
-    }
-    ```
-  - Using **Interfaces**:
-    ```java
-    interface Vehicle {
-        void move();
-    }
-    class Car implements Vehicle {
-        public void move() { System.out.println("Car is moving"); }
-    }
-    ```
-
----
-
-### **10. What is a Constructor? What are its types?**
-A constructor is a special method used to initialize objects of a class. It has the same name as the class and no return type.
-- **Types**:
-  1. **Default Constructor**: Provided by the compiler if no constructor is defined.
-  2. **Parameterized Constructor**: Accepts arguments to initialize the object.
-  3. **Copy Constructor**: Copies data from another object (not explicitly supported in Java).
-
----
-
-### **11. Can you explain the difference between a Constructor and a Method?**
-| **Aspect**          | **Constructor**                              | **Method**                              |
-|----------------------|----------------------------------------------|-----------------------------------------|
-| **Purpose**          | Initializes objects.                        | Executes code or performs actions.      |
-| **Name**             | Same as the class name.                     | Can have any valid identifier.          |
-| **Return Type**      | No return type (not even `void`).            | Has a return type.                      |
-| **Call**             | Called automatically during object creation. | Explicitly called by the user.          |
-
----
-
-### **12. What is a Destructor? How does it work?**
-A destructor is a method used to free up resources when an object is destroyed. It is automatically invoked at the end of an object's lifecycle. 
-- **In Java**: Handled by the Garbage Collector.
-  ```java
-  @Override
-  protected void finalize() throws Throwable {
-      System.out.println("Object is destroyed");
-  }
-  ```
-- **In C++**: Defined explicitly using a `~` symbol.
-  ```cpp
-  ~ClassName() {
-      // Code to free resources
-  }
-  ```
-
---- 
-
-**Intermediate-level OOPS questions:**
-
----
-
-### **1. What is the difference between Compile-Time and Run-Time Polymorphism?**
-
-| **Aspect**                | **Compile-Time Polymorphism**                              | **Run-Time Polymorphism**                                |
-|---------------------------|-----------------------------------------------------------|----------------------------------------------------------|
-| **Definition**            | Polymorphism resolved at compile time.                    | Polymorphism resolved at runtime.                       |
-| **Examples**              | Method Overloading, Operator Overloading.                 | Method Overriding.                                      |
-| **Binding**               | Early Binding.                                            | Late Binding (Dynamic Binding).                        |
-| **Execution**             | Faster as it is determined at compile time.               | Slower due to runtime method resolution.                |
-| **Example** (Java)        | `add(int a, int b)` and `add(double a, double b)`.         | Overriding `void draw()` in subclasses like `Circle`.    |
-
----
-
-### **2. Explain the difference between Method Overloading and Method Overriding.**
-
-| **Aspect**                | **Method Overloading**                                    | **Method Overriding**                                    |
-|---------------------------|----------------------------------------------------------|----------------------------------------------------------|
-| **Definition**            | Same method name, different parameter list in the same class. | Same method name and parameters in parent and child classes. |
-| **Polymorphism Type**     | Compile-Time Polymorphism.                                | Run-Time Polymorphism.                                   |
-| **Inheritance Requirement** | Not required.                                           | Requires inheritance.                                    |
-| **Modifiers**             | Can have different access modifiers.                     | Access modifiers must not reduce visibility.             |
-| **Example** (Java)        | `void print(int x)` and `void print(double y)`.           | Parent class `void show()`, child class `void show()`.   |
-
----
-
-### **3. Can we override static methods in Java? Why or why not?**
-No, static methods cannot be overridden in Java because they are bound to the class rather than an object. Overriding applies to instance methods, which are tied to object instances. Instead, static methods can be **hidden**, meaning the method in the child class shadows the parent class's static method.
-
----
-
-### **4. What is the difference between Abstraction and Encapsulation?**
-
-| **Aspect**            | **Abstraction**                                           | **Encapsulation**                                       |
-|-----------------------|----------------------------------------------------------|--------------------------------------------------------|
-| **Definition**        | Hides implementation details and shows only functionality. | Restricts direct access to data through access modifiers. |
-| **Focus**            | On what the object does (behavior).                       | On how the object is structured (data hiding).         |
-| **Implementation**   | Abstract classes, Interfaces.                             | Classes, access modifiers.                             |
-| **Example**           | Abstract class `Shape` with `draw()` method.             | Private fields with public getter/setter methods.      |
-
----
-
-### **5. What are access modifiers? Explain their importance.**
-Access modifiers define the visibility of classes, methods, and variables. In Java, they include:
-1. **Private**: Accessible within the class only.
-2. **Default (no modifier)**: Accessible within the same package.
-3. **Protected**: Accessible within the package and by subclasses.
-4. **Public**: Accessible everywhere.
-
-**Importance**:
-- Enforces encapsulation.
-- Prevents unauthorized access to critical data.
-- Defines scope and limits access.
-
----
-
-### **6. What is Multiple Inheritance? Does Java support it? Why?**
-**Multiple Inheritance**: When a class inherits from more than one class, gaining properties and behaviors from multiple parents.
-- **Java's Support**: Java does not support multiple inheritance with classes to avoid the **Diamond Problem** (ambiguity due to multiple parent implementations of the same method).
-- Java allows multiple inheritance using **interfaces**, as interfaces only provide method declarations, avoiding ambiguity.
-
----
-
-### **7. Explain the concept of ‘super’ and ‘this’ keywords.**
-- **`super`**:
-  - Refers to the parent class.
-  - Used to call a parent class’s constructor or method.
-  - Example:
-    ```java
-    super.methodName();
-    ```
-- **`this`**:
-  - Refers to the current class.
-  - Used to access current class methods, variables, or constructors.
-  - Example:
-    ```java
-    this.variableName = value;
-    this.methodName();
-    ```
-
----
-
-### **8. How is the concept of OOPS implemented in popular programming languages like Java or Python?**
-- **Java**:
-  - Fully object-oriented (except for primitive types).
-  - Uses classes and objects to implement all OOPS principles.
-  - Features include inheritance, abstraction (via interfaces/abstract classes), encapsulation, and polymorphism.
-
-- **Python**:
-  - Multi-paradigm (supports both procedural and OOPS styles).
-  - Implements OOPS through classes, inheritance, and polymorphism.
-  - Dynamic typing makes it more flexible than Java.
-
----
-
-### **9. What is the significance of the `final` keyword in OOPS?**
-The `final` keyword is used to restrict modification:
-1. **Final Variables**: Cannot be reassigned after initialization.
-2. **Final Methods**: Cannot be overridden by subclasses.
-3. **Final Classes**: Cannot be extended.
-   - Example:
-     ```java
-     final class Constants {
-         static final double PI = 3.14159;
-     }
-     ```
-
----
-
-### **10. What is an Interface? How is it different from an Abstract Class?**
-
-| **Aspect**            | **Interface**                                         | **Abstract Class**                                   |
-|-----------------------|-------------------------------------------------------|----------------------------------------------------|
-| **Definition**        | A collection of abstract methods (no implementation). | Can have both abstract and concrete methods.       |
-| **Inheritance**       | Supports multiple inheritance.                        | Single inheritance only.                           |
-| **Default Modifier**  | Methods are `public` and `abstract` by default.       | Methods can have any access modifier.             |
-| **Example**           | `interface Drawable { void draw(); }`                 | `abstract class Shape { abstract void draw(); }`   |
-
----
-
-### **11. What are Virtual Functions and Pure Virtual Functions?**
-- **Virtual Functions**:
-  - Methods declared in a base class that can be overridden in derived classes.
-  - Supported in languages like C++.
-
-- **Pure Virtual Functions**:
-  - Virtual functions with no implementation in the base class.
-  - Used to enforce implementation in derived classes (similar to abstract methods in Java).
-  - Example:
-    ```cpp
-    class Shape {
-        virtual void draw() = 0; // Pure virtual function
-    };
-    ```
-
----
-
-### **12. Explain the concept of Dynamic Binding.**
-Dynamic Binding (or Late Binding) refers to the process where the method to be invoked is determined at runtime. It is used in **method overriding** to call the appropriate version of the method based on the object type.
-- Example:
-  ```java
-  Animal animal = new Dog();
-  animal.sound(); // Calls Dog's overridden method
-  ```
-
----
-
-### **13. What is the Diamond Problem in inheritance? How is it resolved?**
-The Diamond Problem occurs in multiple inheritance when a class inherits from two classes that have a common parent, leading to ambiguity in method resolution.
-- **Resolution in Java**: Java avoids the Diamond Problem by not allowing multiple inheritance with classes. It supports multiple inheritance using interfaces, as interfaces do not contain implementation, only declarations.
-
---- 
-
-**Advanced-level OOPS questions:**
-
----
-
-### **1. Is it always necessary to create objects from a class in OOPS? Why or why not?**
-No, creating objects from a class is not always necessary in OOPS. For example:
-1. **Static Members**: Static methods and variables can be accessed without creating an object.
-   ```java
-   class Example {
-       static void display() { System.out.println("Static method"); }
-   }
-   Example.display();
-   ```
-2. **Utility Classes**: Classes like `Math` in Java provide only static methods and are not instantiated.
-3. **Abstract Classes and Interfaces**: These cannot be instantiated directly; instead, their concrete implementations are used.
-
----
-
-### **2. Can a class implement multiple interfaces? Provide examples.**
-Yes, a class can implement multiple interfaces in OOPS. This allows Java to achieve multiple inheritance.
+#### **Example in Java**  
 ```java
-interface A { void methodA(); }
-interface B { void methodB(); }
+class Student {
+    private String name;
 
-class C implements A, B {
-    public void methodA() { System.out.println("Method A"); }
-    public void methodB() { System.out.println("Method B"); }
+    // Setter method
+    public void setName(String newName) {
+        name = newName;
+    }
+
+    // Getter method
+    public String getName() {
+        return name;
+    }
 }
 ```
 
 ---
 
-### **3. How does the concept of Delegation fit into OOPS?**
-**Delegation** is a design principle where an object delegates a task to another object. Instead of performing the task itself, it relies on another class or object to handle the responsibility.  
+### **2. Inheritance**  
+- **Definition**: One class (child/subclass) inherits properties and behaviors from another class (parent/superclass).  
+- **Purpose**: To promote **code reuse** and maintain a hierarchical relationship between classes.  
+- **Example in Java**:  
+```java
+class Animal {
+    void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog barks");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog dogObj = new Dog();
+        dogObj.sound(); // Inherited from Animal class
+        dogObj.bark();  // Dog-specific method
+    }
+}
+```
+
+#### **Types of Inheritance**  
+1. **Single Inheritance** - One class inherits from another.  
+2. **Multilevel Inheritance** - A derived class acts as a base class for another.  
+3. **Multiple Inheritance** - A class inherits from more than one base class (supported in C++ but not in Java).  
+4. **Hierarchical Inheritance** - Multiple classes inherit from a single base class.  
+5. **Hybrid Inheritance** - A mix of multiple and hierarchical inheritance.  
+
+---
+
+### **3. Polymorphism**  
+- **Definition**: One entity takes **multiple forms**.  
+- **Purpose**: Increases **flexibility** in the program.  
+- **Types**:  
+  1. **Compile-time (Static) Polymorphism** → Achieved through method **overloading**.  
+  2. **Runtime (Dynamic) Polymorphism** → Achieved through method **overriding**.  
+
+#### **Method Overloading (Compile-time Polymorphism)**
+```java
+class MathOperations {
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    double add(double a, double b) {
+        return a + b;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MathOperations obj = new MathOperations();
+        System.out.println(obj.add(5, 10));      // Calls int version
+        System.out.println(obj.add(5.5, 2.3));  // Calls double version
+    }
+}
+```
+
+#### **Method Overriding (Runtime Polymorphism)**
+```java
+class Parent {
+    void display() {
+        System.out.println("Display method in Parent class");
+    }
+}
+
+class Child extends Parent {
+    void display() {  // Overriding parent method
+        System.out.println("Display method in Child class");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Parent obj = new Child();  // Parent reference, child object
+        obj.display();  // Calls Child class method (Runtime binding)
+    }
+}
+```
+
+---
+
+### **4. Abstraction**  
+- **Definition**: Hides **implementation details** and exposes only the essential features.  
+- **Achieved via**:  
+  1. **Abstract classes** (partially implemented classes).  
+  2. **Interfaces** (fully abstract classes).  
+
+#### **Abstract Class Example**
+```java
+abstract class Vehicle {
+    abstract void start(); // Abstract method (no body)
+}
+
+class Car extends Vehicle {
+    void start() {
+        System.out.println("Car starts with key");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Vehicle obj = new Car();
+        obj.start();
+    }
+}
+```
+
+#### **Interface Example**
+```java
+interface Animal {
+    void sound(); // Abstract method
+}
+
+class Dog implements Animal {
+    public void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal obj = new Dog();
+        obj.sound();
+    }
+}
+```
+
+---
+
+## **Important Concepts in OOPs**
+
+### **What is a Class?**
+- A **class** is a blueprint/template for creating objects.  
+- It contains **data members (variables)** and **methods (functions)**.  
+
+### **What is an Object?**
+- An object is an **instance** of a class.  
+- It represents a **real-world entity** with **attributes and behavior**.  
+
+### **What is a Constructor?**
+- A **special method** called automatically when an object is created.  
+- Used to **initialize object properties**.  
+
+#### **Types of Constructors**  
+1. **Default Constructor** - No parameters, provided by compiler if not defined.  
+2. **Parameterized Constructor** - Accepts arguments for custom initialization.  
+3. **Copy Constructor** - Copies data from another object of the same class.  
+
+```java
+class Person {
+    String name;
+
+    // Constructor
+    Person(String n) {
+        name = n;
+    }
+
+    // Copy Constructor
+    Person(Person obj) {
+        this.name = obj.name;
+    }
+
+    void display() {
+        System.out.println("Name: " + name);
+    }
+
+    public static void main(String[] args) {
+        Person p1 = new Person("Vinod");
+        Person p2 = new Person(p1); // Copy constructor call
+        p2.display();
+    }
+}
+```
+
+---
+
+## **More Advanced OOPs Questions**
+
+### **What is an Access Specifier?**
+- Defines the **scope** and **visibility** of class members.  
+- **Types**:  
+  1. **Public** - Accessible anywhere.  
+  2. **Private** - Accessible only within the same class.  
+  3. **Protected** - Accessible within the same package and subclasses.  
+
+---
+
+### **super vs this keyword in Java**  
+| Feature | `super` | `this` |
+|---------|--------|--------|
+| Refers to | Parent class | Current class |
+| Used for | Accessing parent class members | Accessing current class members |
+| Calls Constructor? | Yes, to call the parent class constructor (`super()`) | Yes, to call another constructor in the same class (`this()`) |
+| Overriding | Used to call parent class methods when overridden in the child class | Used to differentiate instance variables from parameters |
+
+Example:  
+```java
+class Parent {
+    int a = 10;
+
+    void display() {
+        System.out.println("Parent class method");
+    }
+}
+
+class Child extends Parent {
+    int a = 20;
+
+    void show() {
+        System.out.println("Child class variable a: " + this.a); // Refers to current class variable
+        System.out.println("Parent class variable a: " + super.a); // Refers to parent class variable
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Child obj = new Child();
+        obj.show();
+    }
+}
+```
+
+---
+
+### **static keyword in Java**  
+- **Static Variable**: Shared among all objects, stored in the class area.  
+- **Static Method**: Can be called without an object, cannot access non-static members directly.  
+- **Static Block**: Runs once when the class is loaded.  
+- **Static Class (Nested Class)**: A class inside another class that doesn’t need an outer class instance.
+
+Example:  
+```java
+class Example {
+    static int count = 0; // Static variable
+
+    static void show() {  // Static method
+        System.out.println("Static method called");
+    }
+
+    static {  // Static block
+        System.out.println("Static block executed");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Example.show(); // Calling static method without object
+        System.out.println("Static variable: " + Example.count);
+    }
+}
+```
+
+---
+
+### **Garbage Collection in Java**  
+Garbage Collection (GC) automatically reclaims memory occupied by unused objects.  
+
+- **Methods for requesting GC:**  
+  - `System.gc();`
+  - `Runtime.getRuntime().gc();`
+
+- **Types of GC Algorithms:**  
+  - **Serial GC**: Best for small applications.  
+  - **Parallel GC**: Uses multiple threads for GC.  
+  - **CMS (Concurrent Mark-Sweep) GC**: Low pause times, used in web servers.  
+  - **G1 (Garbage First) GC**: Best for large applications.  
+
+Example:  
+```java
+class Demo {
+    protected void finalize() {
+        System.out.println("Object is garbage collected");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Demo d1 = new Demo();
+        d1 = null;
+        System.gc(); // Requesting GC
+    }
+}
+```
+
+---
+
+### **Coupling in OOP**  
+Coupling refers to the dependency between classes.  
+
+- **Types:**  
+  - **Tight Coupling**: High dependency between classes, difficult to modify.  
+  - **Loose Coupling**: Minimal dependency, easier to modify.  
+
+Example of **tight coupling** (bad practice):  
+```java
+class Engine {
+    void start() {
+        System.out.println("Engine started");
+    }
+}
+
+class Car {
+    Engine engine = new Engine(); // Car is tightly coupled with Engine
+
+    void drive() {
+        engine.start();
+        System.out.println("Car is moving");
+    }
+}
+```
+Example of **loose coupling** (good practice using dependency injection):  
+```java
+class Engine {
+    void start() {
+        System.out.println("Engine started");
+    }
+}
+
+class Car {
+    private Engine engine;
+
+    Car(Engine engine) {  // Injecting dependency
+        this.engine = engine;
+    }
+
+    void drive() {
+        engine.start();
+        System.out.println("Car is moving");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Engine engine = new Engine();
+        Car car = new Car(engine); // Passing engine object
+        car.drive();
+    }
+}
+```
+
+---
+
+### **Friend Function in C++ (Not in Java)**  
+- **A friend function** allows non-member functions to access private and protected members of a class.  
+- **Not available in Java** (Java follows strict encapsulation).  
+
+Example in **C++**:  
+```cpp
+#include <iostream>
+using namespace std;
+
+class Box {
+private:
+    int width;
+
+public:
+    Box(int w) : width(w) {}
+
+    friend void showWidth(Box b); // Friend function declaration
+};
+
+void showWidth(Box b) { // Friend function definition
+    cout << "Width: " << b.width << endl;
+}
+
+int main() {
+    Box obj(10);
+    showWidth(obj); // Accessing private data
+}
+```
+
+---
+
+### **Exception Handling in Java**  
+- **Exception:** An unexpected event that disrupts program execution.  
+- **Checked Exceptions:** Compile-time exceptions (e.g., IOException).  
+- **Unchecked Exceptions:** Runtime exceptions (e.g., NullPointerException).  
+
+**Try-Catch Example:**  
+```java
+public class Test {
+    public static void main(String[] args) {
+        try {
+            int a = 10 / 0; // ArithmeticException
+        } catch (ArithmeticException e) {
+            System.out.println("Cannot divide by zero");
+        } finally {
+            System.out.println("Finally block executed");
+        }
+    }
+}
+```
+
+**Throw vs Throws:**  
+- **throw**: Used to manually throw an exception.  
+- **throws**: Declares exceptions in a method signature.  
+
+Example:  
+```java
+class Example {
+    void check(int age) throws Exception {
+        if (age < 18) throw new Exception("Not eligible");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Example obj = new Example();
+        try {
+            obj.check(16);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
+```
+
+---
+
+### **Final vs Finally vs Finalize in Java**  
+| Feature | `final` | `finally` | `finalize()` |
+|---------|--------|-----------|-------------|
+| Used for | Prevent inheritance, overriding, or modification | Ensures execution of cleanup code | Called before garbage collection |
+| Applied to | Variables, methods, and classes | A block in exception handling | Objects |
+| Execution | Compile-time | Runtime | GC time |
+| Example | `final int x = 10;` | `finally { System.out.println("Always executed"); }` | `protected void finalize() { System.out.println("Garbage collected"); }` |
+
+---
+
+### **Abstraction vs Encapsulation**  
+| Feature | Abstraction | Encapsulation |
+|---------|------------|--------------|
+| Definition | Hides implementation details and shows only functionality | Wrapping data and methods into a single unit |
+| Achieved by | Abstract classes & Interfaces | Private variables with getter/setter methods |
+| Example | `abstract class Shape { abstract void draw(); }` | `private int age; public int getAge() { return age; }` |
+
+---
+
+### What is method hiding?
+**Method hiding** occurs when a subclass defines a static method with the same signature as a static method in the superclass. In such cases, the method in the subclass does not override the method in the superclass but instead hides it.
+
+Example in Java:
+```java
+class Parent {
+    static void show() {
+        System.out.println("Parent's static method");
+    }
+}
+
+class Child extends Parent {
+    static void show() {
+        System.out.println("Child's static method");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Parent obj = new Child();
+        obj.show(); // Outputs: Parent's static method (method hiding)
+    }
+}
+```
+
+---
+
+### What is the difference between method overloading and method overriding?
+| Feature | Method Overloading | Method Overriding |
+|---------|--------------------|--------------------|
+| Definition | Multiple methods with the same name but different parameters in the same class | Subclass provides a specific implementation of a method already defined in the superclass |
+| Polymorphism Type | Compile-time (static) polymorphism | Runtime (dynamic) polymorphism |
+| Signature Change | Yes, method signatures must be different | No, method signatures must be the same |
+| Access Specifier | Can be the same or different | Cannot reduce visibility of overridden method |
+| Static Methods | Can be overloaded | Cannot be overridden |
+
+---
+
+### What is early binding and late binding?
+- **Early Binding (Static Binding)**: The method to be called is determined at compile-time. It applies to method overloading and static methods.
+- **Late Binding (Dynamic Binding)**: The method to be called is determined at runtime, based on the object's actual type. It applies to method overriding.
+
 Example:
 ```java
-class Printer {
-    void print() { System.out.println("Printing..."); }
+class Parent {
+    void show() {
+        System.out.println("Parent class");
+    }
 }
 
-class Document {
-    private Printer printer = new Printer();
-    void printDocument() { printer.print(); } // Delegation
+class Child extends Parent {
+    void show() {
+        System.out.println("Child class");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Parent obj = new Child();
+        obj.show(); // Late binding - calls Child's show()
+    }
 }
 ```
 
 ---
 
-### **4. What are Design Patterns in OOPS? Can you name a few?**
-**Design Patterns** are reusable solutions to common software design problems. Examples:
-1. **Creational Patterns**: Singleton, Factory, Builder, Prototype.
-2. **Structural Patterns**: Adapter, Decorator, Composite.
-3. **Behavioral Patterns**: Observer, Strategy, State, Command.
+### What is an anonymous class?
+An **anonymous class** is a class without a name, created for a short duration, often used when you need to override a method without explicitly defining a new subclass.
+
+Example in Java:
+```java
+abstract class Animal {
+    abstract void sound();
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal obj = new Animal() {
+            void sound() {
+                System.out.println("Anonymous class sound!");
+            }
+        };
+        obj.sound();
+    }
+}
+```
 
 ---
 
-### **5. Explain the difference between Association, Aggregation, and Composition.**
+### What is an inner class?
+An **inner class** is a class defined within another class. It helps encapsulate functionality and improves modularity.
 
-| **Aspect**      | **Association**                                   | **Aggregation**                               | **Composition**                                   |
-|------------------|--------------------------------------------------|-----------------------------------------------|--------------------------------------------------|
-| **Definition**   | A general relationship between objects.          | A "has-a" relationship where objects are loosely related. | A strong "has-a" relationship where objects are tightly bound. |
-| **Lifetime**     | Independent.                                     | Independent.                                  | Dependent (child cannot exist without parent).   |
-| **Example**      | Teacher ↔ Student.                               | Department ↔ Professor.                       | House ↔ Room (Room cannot exist without House). |
+Types of inner classes:
+1. **Member Inner Class** - Non-static class inside another class.
+2. **Static Nested Class** - A static class inside another class.
+3. **Local Inner Class** - Defined inside a method.
+4. **Anonymous Inner Class** - A class without a name, declared and instantiated in one step.
+
+Example:
+```java
+class Outer {
+    class Inner {
+        void display() {
+            System.out.println("Inside Inner class");
+        }
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Outer.Inner obj = new Outer().new Inner();
+        obj.display();
+    }
+}
+```
 
 ---
 
-### **6. What is the role of Garbage Collection in OOPS?**
-Garbage Collection automatically frees memory by destroying unused or unreachable objects. It ensures efficient memory management and prevents memory leaks.
-- Example in Java: Objects with no references are eligible for garbage collection.
+### What is object cloning?
+**Object cloning** is the process of creating an exact copy of an object. In Java, this is done using the `clone()` method of the `Object` class.
+
+Example:
+```java
+class Student implements Cloneable {
+    String name;
+    int age;
+
+    Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+}
+
+public class Test {
+    public static void main(String[] args) throws CloneNotSupportedException {
+        Student s1 = new Student("Vinod", 22);
+        Student s2 = (Student) s1.clone();
+
+        System.out.println(s2.name + " " + s2.age);
+    }
+}
+```
 
 ---
 
-### **7. Can we create an object without a constructor? How?**
-Yes, an object can be created without explicitly calling a constructor using:
-1. **Cloning**: Using the `clone()` method in Java.
-2. **Deserialization**: Reconstructing an object from a serialized form.
-3. **Reflection**: Creating objects via the `Class.newInstance()` method.
+### What is the difference between deep copy and shallow copy?
+| Feature | Shallow Copy | Deep Copy |
+|---------|-------------|-----------|
+| Definition | Copies object reference, changes affect both objects | Creates a new independent copy |
+| Memory Allocation | Same memory references | Allocates new memory for copied object |
+| Cloning Mechanism | Default `clone()` method (Object class) | Custom cloning logic required |
 
 ---
 
-### **8. What is a Singleton Class? Why is it used?**
-A **Singleton Class** ensures only one instance of the class exists. It is used for scenarios like managing a shared resource (e.g., database connection, configuration settings).
+### What is a singleton class?
+A **singleton class** is a class that allows only one instance to exist at a time.
+
 Example:
 ```java
 class Singleton {
     private static Singleton instance;
-    private Singleton() {}
+
+    private Singleton() {} // Private constructor
+
     public static Singleton getInstance() {
-        if (instance == null) instance = new Singleton();
+        if (instance == null) {
+            instance = new Singleton();
+        }
         return instance;
     }
 }
-```
 
----
-
-### **9. Explain how you would achieve Thread Safety in an OOPS context.**
-Thread safety ensures that shared resources are accessed correctly in multi-threaded environments. Methods:
-1. **Synchronization**: Use `synchronized` blocks or methods.
-2. **Locks**: Use `ReentrantLock` for finer control.
-3. **Thread-Safe Collections**: Use `ConcurrentHashMap`, `CopyOnWriteArrayList`.
-4. **Immutable Objects**: Design objects as immutable.
-
----
-
-### **10. What are SOLID principles in OOPS? Explain each briefly.**
-1. **S**ingle Responsibility Principle: A class should have only one reason to change.
-2. **O**pen/Closed Principle: Classes should be open for extension but closed for modification.
-3. **L**iskov Substitution Principle: Derived classes should be substitutable for their base classes.
-4. **I**nterface Segregation Principle: Interfaces should be specific to avoid forcing classes to implement unused methods.
-5. **D**ependency Inversion Principle: Depend on abstractions, not on concrete implementations.
-
----
-
-### **11. What is Reflection in OOPS? How is it used?**
-Reflection allows a program to inspect and manipulate its own structure and behavior at runtime.
-- Example: Accessing private fields or methods.
-```java
-Class<?> cls = Class.forName("Example");
-Method method = cls.getDeclaredMethod("privateMethod");
-method.setAccessible(true);
-method.invoke(obj);
-```
-
----
-
-### **12. What is Object Cloning? How is it achieved in Java?**
-Object Cloning creates a duplicate of an object.  
-- Achieved by implementing the `Cloneable` interface and overriding the `clone()` method.
-```java
-class Example implements Cloneable {
-    public Object clone() throws CloneNotSupportedException {
-        return super.clone();
+public class Test {
+    public static void main(String[] args) {
+        Singleton obj1 = Singleton.getInstance();
+        Singleton obj2 = Singleton.getInstance();
+        System.out.println(obj1 == obj2); // Output: true
     }
 }
 ```
 
 ---
 
-### **13. Can you explain the difference between Shallow Copy and Deep Copy?**
+### What is dependency injection?
+**Dependency Injection (DI)** is a design pattern used to inject dependencies into a class instead of creating them inside the class, improving modularity and testability.
 
-| **Aspect**        | **Shallow Copy**                                   | **Deep Copy**                                       |
-|-------------------|----------------------------------------------------|----------------------------------------------------|
-| **Definition**    | Copies the object and references of inner objects. | Copies the object and duplicates inner objects.    |
-| **Effect**        | Changes to inner objects affect the copied object. | Changes to inner objects do not affect the copy.   |
-| **Example**       | `clone()` method without custom implementation.    | Manually copying fields or using serialization.    |
-
----
-
-### **14. What are Anonymous Inner Classes? Why are they used?**
-Anonymous Inner Classes are unnamed classes used to create one-time-use subclasses or implementations of interfaces.
 Example:
 ```java
-Runnable r = new Runnable() {
-    public void run() { System.out.println("Anonymous Inner Class"); }
-};
-```
-
-**Use**: Reduces boilerplate code for small, single-use implementations.
-
----
-
-### **15. What is Dependency Injection in OOPS? How does it enhance code reusability?**
-**Dependency Injection** (DI) provides objects their dependencies rather than creating them internally.  
-- Enhances code reusability by decoupling object creation from business logic.
-- Example using a constructor:
-```java
 class Service {
-    private Repository repository;
-    Service(Repository repository) {
-        this.repository = repository; // Dependency injected
+    void serve() {
+        System.out.println("Service is running");
+    }
+}
+
+class Client {
+    private Service service;
+
+    Client(Service service) {
+        this.service = service;
+    }
+
+    void useService() {
+        service.serve();
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Service service = new Service();
+        Client client = new Client(service);
+        client.useService();
     }
 }
 ```
 
---- 
+---
+
+### What is an immutable class?
+An **immutable class** is a class whose objects cannot be modified once created. It ensures data consistency and thread safety.
+
+Example:
+```java
+final class Immutable {
+    private final String value;
+
+    Immutable(String value) {
+        this.value = value;
+    }
+
+    public String getValue() {
+        return value;
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Immutable obj = new Immutable("Hello");
+        System.out.println(obj.getValue());
+    }
+}
+```
+
+---
+
